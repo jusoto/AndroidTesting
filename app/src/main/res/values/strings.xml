@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Pint</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Logout</string>
+    <string name="preference_file_key">PintPrefs</string>
+    <string name="title_activity_detailed">DetailedActivity</string>
+    <string name="server_ip">http://10.0.0.96:8080</string>
+</resources>
