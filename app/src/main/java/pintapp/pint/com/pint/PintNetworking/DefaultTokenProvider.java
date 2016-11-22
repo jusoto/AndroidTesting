@@ -23,7 +23,7 @@ import pintapp.pint.com.pint.R;
 public class DefaultTokenProvider implements ITokenProvider {
 
     public RequestQueue requestQueue;
-    public String SERVER_IP = "http://10.109.55.248:8080";
+    public String SERVER_IP = "http://10.109.72.136:8080";
 
     public DefaultTokenProvider(Context context) {
         requestQueue = Volley.newRequestQueue(context);
