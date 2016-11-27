@@ -102,7 +102,9 @@ public class HomeActivityUnitTest {
     public void onBackPressed() throws Exception {
         //There is no implementation in this method
         //Default assert Application not null
-        assertNotNull("onBackPressed - Not implemented in original code", application);
+        //assertNotNull("onBackPressed - Not implemented in original code", application);
+        activity.onBackPressed();
+        assertTrue("onBackPressed", true);
     }
 
     @Test

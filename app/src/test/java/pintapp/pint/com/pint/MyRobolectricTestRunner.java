@@ -6,8 +6,6 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 import org.robolectric.manifest.AndroidManifest;
 import org.robolectric.res.FileFsFile;
-import org.robolectric.res.Fs;
-import org.robolectric.res.FsFile;
 import org.robolectric.util.Logger;
 import org.robolectric.util.ReflectionHelpers;
 
@@ -15,6 +13,7 @@ import org.robolectric.util.ReflectionHelpers;
 public class MyRobolectricTestRunner extends RobolectricTestRunner {
 
     private static final String BUILD_OUTPUT = "app/build/intermediates";
+    private static final String BUILD_OUTPUT2 = "build/intermediates";
 
     public MyRobolectricTestRunner(Class<?> klass) throws InitializationError {
         super(klass);
@@ -37,8 +36,10 @@ public class MyRobolectricTestRunner extends RobolectricTestRunner {
             res = FileFsFile.from(BUILD_OUTPUT, "res", flavor, type);
         } else {
             // Use res/merged if the output directory doesn't exist for Data Binding compatibility
-            res = FileFsFile.from(BUILD_OUTPUT, "res/merged", flavor, type);
+            //res = FileFsFile.from(BUILD_OUTPUT2, "res/merged", flavor, type);
+            res = FileFsFile.from(BUILD_OUTPUT2, "res/merged", flavor, type);
         }
+
         final FileFsFile assets = FileFsFile.from(BUILD_OUTPUT, "assets", flavor, type);
 
         final FileFsFile manifest;
@@ -46,7 +47,8 @@ public class MyRobolectricTestRunner extends RobolectricTestRunner {
             manifest = FileFsFile.from(BUILD_OUTPUT, "manifests", "full", flavor, type, "AndroidManifest.xml");
         } else {
             // Fallback to the location for library manifests
-            manifest = FileFsFile.from(BUILD_OUTPUT, "bundles", flavor, type, "AndroidManifest.xml");
+            manifest = FileFsFile.from(BUILD_OUTPUT2, "manifests", "full", flavor, type, "AndroidManifest.xml");
+            //manifest = FileFsFile.from(BUILD_OUTPUT2, "bundles", flavor, type, "AndroidManifest.xml");
         }
 
         Logger.debug("Robolectric assets directory: " + assets.getPath());

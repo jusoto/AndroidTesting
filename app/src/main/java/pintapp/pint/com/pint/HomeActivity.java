@@ -104,7 +104,7 @@ public class HomeActivity extends AppCompatActivity {
         if(mLocationListener == null)
             mLocationListener = new DefaultLocationListener();
 
-        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 5, mLocationListener);
+        mLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 500, 5, mLocationListener);
 
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         listPagerAdapter = new ListPagerAdapter(getSupportFragmentManager());

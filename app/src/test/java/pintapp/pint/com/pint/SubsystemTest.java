@@ -21,6 +21,7 @@ import org.robolectric.shadows.httpclient.FakeHttp;
 
 import java.util.ArrayList;
 
+import pintapp.pint.com.pint.PintNetworking.DefaultTokenProvider;
 import pintapp.pint.com.pint.PintNetworking.ITokenProvider;
 import pintapp.pint.com.pint.PintNetworking.JSONAdapter;
 
@@ -104,7 +105,11 @@ public class SubsystemTest {
 
     @Test
     public void Login() throws Exception {
-        assertNotNull(tokenProvider);
+        await().atLeast(3, SECONDS);
+        if(tokenProvider.hasToken(loginContext))
+            assertTrue(tokenProvider.hasToken(loginContext));
+        else
+            assertFalse(tokenProvider.hasToken(loginContext));
     }
 
     @Test

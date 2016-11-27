@@ -8,7 +8,7 @@ import pintapp.pint.com.pint.R;
 public class PintAPI {
 
 
-    public static String SERVER_IP = "http://10.109.72.136:8080";
+    public static String SERVER_IP = "http://192.168.18.1:8080";
 
     public static final String GET_BLOODDRIVES_BY_LOCATION =
             SERVER_IP + "/api/donor/getBloodDrivesByLocation";
